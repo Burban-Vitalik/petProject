@@ -1,0 +1,6 @@
+const SIDEBAR_COOKIE_NAME = "sidebar-state";
+const MAX_WIDTH_SIDEBAR = "250px";
+const MAX_WIDTH_TRIGGER = "230px";
+
+export { SIDEBAR_COOKIE_NAME, MAX_WIDTH_SIDEBAR, MAX_WIDTH_TRIGGER };
+
