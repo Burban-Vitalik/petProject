@@ -6,6 +6,7 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -15,18 +16,34 @@ import { MenuItems } from "./data";
 import { CustomSidebarFooter } from "./sections/sidebar/CustomSidebarFooter";
 import { MAX_WIDTH_SIDEBAR } from "consts";
 import { SubscriptionCard } from "./cards/SubscriptionCard";
+import { LogOutIcon } from "lucide-react";
 
 export function AppSidebar() {
   const { open } = useSidebar();
 
   return (
     <Sidebar collapsible="icon" style={{ maxWidth: MAX_WIDTH_SIDEBAR }}>
+      <SidebarHeader className="p-4 border-b">
+        <div className="flex items-center space-x-2 overflow-hidden">
+          <LogOutIcon className="size-4 flex-shrink-0" />
+          <span
+            className={`
+              text-xl font-semibold text-gray-800
+              transition-all duration-700
+              whitespace-nowrap
+              ${open ? "opacity-100 ml-2 max-w-auto" : "opacity-0 ml-0 max-w-0"}
+            `}
+          >
+            My Food
+          </span>
+        </div>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="gap-2">
-              {MenuItems.map((item) => (
-                <SidebarMenuItem key={item.href}>
+              {MenuItems.map((item, i) => (
+                <SidebarMenuItem key={i}>
                   <SidebarMenuButton
                     asChild
                     className="transition-colors duration-100 hover:bg-lime-300 rounded-md p-4"
@@ -42,10 +59,10 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup
-          className={`transition-all ${
+          className={`overflow-hidden transition-all duration-500 ${
             open
-              ? "opacity-100 scale-100 duration-500"
-              : "opacity-0 scale-95 pointer-events-none duration-150"
+              ? "opacity-100 scale-100 max-h-full"
+              : "opacity-0 scale-95 max-h-0"
           }`}
         >
           <SubscriptionCard />

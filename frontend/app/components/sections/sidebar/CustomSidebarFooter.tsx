@@ -13,6 +13,21 @@ import {
 import { MAX_WIDTH_TRIGGER } from "consts";
 import { ChevronUp, User2 } from "lucide-react";
 
+const footerItems = [
+  {
+    title: "Account",
+    href: "/",
+  },
+  {
+    title: "Billing",
+    href: "/",
+  },
+  {
+    title: "Sign out",
+    href: "/",
+  },
+];
+
 export function CustomSidebarFooter() {
   return (
     <SidebarFooter>
@@ -26,15 +41,11 @@ export function CustomSidebarFooter() {
               </SidebarMenuButton>
             </DropdownMenuTrigger>
             <DropdownMenuContent style={{ width: MAX_WIDTH_TRIGGER }}>
-              <DropdownMenuItem>
-                <span>Account</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <span>Billing</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <span>Sign out</span>
-              </DropdownMenuItem>
+              {footerItems.map((item) => (
+                <DropdownMenuItem key={item.title}>
+                  <span>{item.title}</span>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
         </SidebarMenuItem>
