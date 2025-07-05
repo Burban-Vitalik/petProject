@@ -18,7 +18,7 @@ export const MenuItems: Array<{
   { title: "Dashboard", href: "/dashboard", icon: LayoutDashboardIcon },
   { title: "Calendar", href: "/calendar", icon: CalendarDaysIcon },
   { title: "Messages", href: "/dashboard", icon: MessageCircleMoreIcon },
-  { title: "Healthy Menu", href: "/dashboard", icon: UtensilsCrossedIcon },
+  { title: "Healthy Menu", href: "/healthy-menu", icon: UtensilsCrossedIcon },
   { title: "Meal Plan", href: "/dashboard", icon: SoupIcon },
   { title: "Food Diary", href: "/dashboard", icon: NotebookTextIcon },
   { title: "Progress", href: "/dashboard", icon: ChartNoAxesCombinedIcon },

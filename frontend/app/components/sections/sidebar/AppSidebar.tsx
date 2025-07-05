@@ -10,13 +10,13 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
   useSidebar,
-} from "./ui/sidebar";
-import { MenuItems } from "./data";
-import { CustomSidebarFooter } from "./sections/sidebar/CustomSidebarFooter";
+} from "../../ui/sidebar";
+import { MenuItems } from "../../data";
+import { CustomSidebarFooter } from "./CustomSidebarFooter";
 import { MAX_WIDTH_SIDEBAR } from "consts";
-import { SubscriptionCard } from "./cards/SubscriptionCard";
-import { LogOutIcon } from "lucide-react";
+import { SubscriptionCard } from "../../cards/SubscriptionCard";
 
 export function AppSidebar() {
   const { open } = useSidebar();
@@ -25,7 +25,7 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" style={{ maxWidth: MAX_WIDTH_SIDEBAR }}>
       <SidebarHeader className="p-4 border-b">
         <div className="flex items-center space-x-2 overflow-hidden">
-          <LogOutIcon className="size-4 flex-shrink-0" />
+          <SidebarTrigger className="size-4 flex-shrink-0" />
           <span
             className={`
               text-xl font-semibold text-gray-800

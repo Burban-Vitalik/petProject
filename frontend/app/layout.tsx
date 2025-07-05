@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
-import { AppSidebar } from "./components/AppSidebar";
-import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { AppSidebar } from "./components/sections/sidebar/AppSidebar";
+import { SidebarProvider } from "./components/ui/sidebar";
 import "./globals.css";
 import { SIDEBAR_COOKIE_NAME } from "consts";
 
@@ -16,12 +16,10 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <SidebarProvider defaultOpen={defaultOpen}>
-          <AppSidebar />
-
-          <main>
-            <SidebarTrigger />
-            {children}
-          </main>
+          <div className="flex w-full min-h-screen">
+            <AppSidebar />
+            <div className="flex-1 flex flex-col">{children}</div>
+          </div>
         </SidebarProvider>
       </body>
     </html>
